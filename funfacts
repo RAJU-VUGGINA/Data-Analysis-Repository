@@ -13,3 +13,5 @@ Random Forests: This model is made of many decision trees, each voting for a fin
 k-Means Clustering: This model creates groups (clusters) by finding central points (centroids). Fun fact: It has no clue about the number of clusters it’ll find until you tell it, making it surprisingly dependent on user input!
 
 Principal Component Analysis (PCA): PCA compresses data to make it smaller but more informative. It’s like squeezing the essence out of data, making it easier to understand at a glance!
+
+
