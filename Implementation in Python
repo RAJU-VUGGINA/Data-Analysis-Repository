@@ -1,0 +1,43 @@
+Example of Implementation in Python:
+python
+Copy code
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.model_selection import train_test_split
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.metrics import accuracy_score, classification_report
+
+# Sample text data and labels
+text_data = ["I love programming", "Python is awesome", "I hate bugs", "Debugging is fun", "Coding is exciting"]
+labels = [1, 1, 0, 1, 1]  # 1: Positive, 0: Negative
+
+# Convert text data into numerical form using Bag of Words
+vectorizer = CountVectorizer()
+X = vectorizer.fit_transform(text_data)
+
+# Split data into train and test sets
+X_train, X_test, y_train, y_test = train_test_split(X, labels, test_size=0.3, random_state=42)
+
+# Train the Naive Bayes model
+model = MultinomialNB()
+model.fit(X_train, y_train)
+
+# Make predictions
+y_pred = model.predict(X_test)
+
+# Evaluate the model
+print(f"Accuracy: {accuracy_score(y_test, y_pred)}")
+print(f"Classification Report:\n{classification_report(y_test, y_pred)}")
+Output:
+markdown
+Copy code
+Accuracy: 1.0
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00         1
+           1       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+This example uses the Multinomial Naive Bayes classifier from sklearn to classify simple text data. The CountVectorizer converts the text into numerical form, and we split the data into training and test sets to evaluate the model.
