@@ -1,0 +1,7 @@
+Python file contains all the process implemented from "EDA" to "Model Selection"
+NLP,ML and DL models are tested among them RNN and NVM (Multinomial model) were selected as per their promising and reliable results.
+
+Models are performed on one feature and three features as well but at the deployment stage we considered only one feature message with Naive Bayes
+
+Streamlit File contains deployment codes  
+only one ML model Naive Bayes is used in Deployment phase
